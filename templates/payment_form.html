@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block title %}Payment{% endblock title %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Form</title>
+    <style>
+      *{
+        box-sizing: border-box;
+    }
+    body{
+        font-family:Verdana, Geneva, Tahoma, sans-serif ;
+        margin: 15px 30px;
+        font-size: 20px;
+        padding: 8px;
+          
+    }
+    .container{
+        background-color: #f2f2f2;
+        padding: 5px 20px 15px 20px;
+        border: 1px solid lightgray ;
+        border-radius: 4px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="date"],
+    textarea,select
+    {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 10px;
+    }
+    fieldset{
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    #card_type{
+        font-size: 110%;
+        font-style:oblique;
+    }
+    input[type="submit"]{
+        padding: 15px 20px;
+        background-color: rgb(87, 200, 130);
+        width: 100%;
+        color: white;
+        border: none;
+        font-size: 110%;
+        border-radius: 7px;
+        cursor: pointer;
+        
+    }
+    input[type="submit"]:hover{
+        background-color: rgb(22, 211, 63);
+    }
+    h1{
+        text-align: center;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <h1>Payment Form</h1>
+        <hr />
+        <h2>Contact Information</h2>
+        <p>Required Fields are followed by *</p>
+        <p>
+          Name : *
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder=" Gyanendra Mahanta"
+          />
+        </p>
+        <fieldset>
+          <legend>Gender *</legend>
+          <p>
+            Male <input type="radio" name="Gender" id="male" required /> 
+            Female <input type="radio" name="Gender" id="female" required />
+          </p>
+        </fieldset>
+
+        <p>
+          Address :
+          <textarea
+            name="address"
+            id="address"
+            cols="30"
+            rows="10"
+            placeholder="Enter your Address"
+          ></textarea>
+        </p>
+        <p>
+          Email : *
+          <input
+            type="email"
+            name="mail"
+            id="mail"
+            placeholder="gyana@gmail.com"
+          />
+        </p>
+        <p>
+          Pincode : *
+          <input
+            type="number"
+            name="pincode"
+            id="pincode"
+            placeholder="e.g 12345"
+          />
+        </p>
+        <h2>Payment Information</h2>
+        <p>
+          Card Type : *
+          <select name="card_type" id="card_type">
+            <option value="">--select an option--</option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="rupay">Rupay</option>
+          </select>
+        </p>
+        <p>
+          Card Number : *
+          <input
+            type="number"
+            name="card_num"
+            id="card_num"
+            placeholder="1111-2222-3333-4444"
+          />
+        </p>
+        <p>
+          Expire Date : * <input type="date" name="exp_date" id="exp_date" />
+        </p>
+        <p>
+          CVV : *
+          <input type="password" name="cvv" id="cvv" placeholder="123" />
+        </p>
+        <input type="submit" value="Pay Now" />
+      </form>
+    </div>
+  </body>
+</html>
+{% endblock body %}
